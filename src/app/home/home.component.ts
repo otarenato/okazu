@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HostService } from 'src/shared/services/host.service';
+import { ReceitaModel } from 'src/shared/models';
+import { HostService, RecipesService } from 'src/shared/services';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   _url: string = '';
 
-  constructor(private router: Router, private hostService: HostService) { }
+  constructor(private router: Router, private hostService: HostService, private recipeService: RecipesService) { }
 
   ngOnInit(): void {
     this._url = this.hostService.getDomainUrl();

@@ -3,3 +3,12 @@
     <img src="{{ _url }}assets/img/svg/{{ _icon }}.svg" style="width: 15%;" /><h2 class="ms-3">{{ _titleCategory }}</h2>
   </div>
 </div>
+<div class="row">
+  <div class="col">
+    <ul>
+      <li *ngFor="let item of _list" (click)="goToRecipe(item.id)">
+        {{ item.titulo }}
+      </li>
+    </ul>
+  </div>
+</div>

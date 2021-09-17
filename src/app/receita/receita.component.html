@@ -1,0 +1,11 @@
+<div class="row">
+  <h2>{{ _receita.titulo }}</h2>
+  <p>Ingredientes:</p>
+  <ul>
+    <li *ngFor="let ing of _receita.ingredientes">{{ ing }}</li>
+  </ul>
+  <p>Modo de preparo:</p>
+  <ul>
+    <li *ngFor="let prep of _receita.preparo">{{ prep }}</li>
+  </ul>
+</div>

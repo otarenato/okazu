@@ -1,17 +1,27 @@
 [
   {
-    "titulo": "Receita 1",
+    "id": 1,
+    "titulo": "Tulipa de frango no forno",
     "categoria": "aves",
     "foto": "xxx",
     "ingredientes": [
-      "1",
-      "2",
-      "3"
+      "1kg de tulipa de frango",
+      "3 batatas descascadas e cortadas em cubos ou rodelas",
+      "1 cenoura descascada e cortada em rodelas",
+      "2 dentes de alho picados",
+      "Azeite",
+      "Sal",
+      "Pimenta do reino",
+      "Cheiro verde"
     ],
     "preparo": [
-      "a",
-      "b",
-      "c"
+      "Tempere as tulipas com o sal, pimenta do reino, azeite, cheiro verde, alho e reserve",
+      "Preaqueça o forno por 10 minutos a 180 graus",
+      "Em uma assadeira, coloque um pouco de azeite e distribua as batatas e cenouras",
+      "Coloque em seguida as tulipas com a pele para cima",
+      "Cubra a assadeira com papel alumínio",
+      "Após o preaquecimento, coloque a assadeira no forno e deixe por 40 minutos",
+      "Retire o papel alumínio e deixe mais 20 minutos para dourar"
     ]
   }
 ]
