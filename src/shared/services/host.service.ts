@@ -8,7 +8,7 @@ export class HostService {
 
   constructor(private actRoute: ActivatedRoute) { }
 
-  urlPath: string = 'https://otarenato.github.io/portfolio/';
+  urlPath: string = 'https://otarenato.github.io/okazu/';
   localhostPath: string = '../../';
 
   getDomainUrl(): string {
