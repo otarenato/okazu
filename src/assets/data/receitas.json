@@ -1,0 +1,17 @@
+[
+  {
+    "titulo": "Receita 1",
+    "categoria": "aves",
+    "foto": "xxx",
+    "ingredientes": [
+      "1",
+      "2",
+      "3"
+    ],
+    "preparo": [
+      "a",
+      "b",
+      "c"
+    ]
+  }
+]

@@ -1,2 +1,58 @@
-Teste
-<router-outlet></router-outlet>
+<div class="container py-3">
+  <header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <span class="fs-4 text-primary">www.OKAZU.com.br</span>
+      </a>
+
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Receitas</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Dicas</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Tempo de cozimento</a>
+      </nav>
+    </div>
+
+    <!-- <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Pricing</h1>
+      <p class="fs-5 text-muted">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+    </div> -->
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <small class="d-block mb-3 text-muted">&copy; 2021</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Receitas</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Carnes</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Aves</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Peixes</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Vegetais</a></li>
+        </ul>
+      </div>
+      <!-- <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Resource name</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Another resource</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Final resource</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About</h5>
+        <ul class="list-unstyled text-small">
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Team</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Locations</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Privacy</a></li>
+          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">Terms</a></li>
+        </ul>
+      </div> -->
+    </div>
+  </footer>
+</div>
+

@@ -1,5 +1,42 @@
-<p>home works!</p>
-<img src="../../assets/img/svg/chicken.svg" class="category-icon" alt="aves" title="aves">
-<img src="../../assets/img/svg/meat.svg" class="category-icon" alt="carnes" title="carnes">
-<img src="../../assets/img/svg/fish.svg" class="category-icon" alt="peixes" title="peixes">
-<img src="../../assets/img/svg/vegetables.svg" class="category-icon" alt="legumes" title="legumes">
+<div class="row text-center">
+  <div class="col-lg-3 col-md-6 col-sm-12">
+    <a class="link-category" (click)="goToRecipes('aves')">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-body">
+          <img src="{{ _url }}assets/img/svg/chicken.svg" class="category-icon" alt="carnes" title="carnes">
+          <span>Aves</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-12">
+    <a class="link-category" (click)="goToRecipes('carnes')">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-body">
+          <img src="{{ _url }}assets/img/svg/meat.svg" class="category-icon" alt="carnes" title="carnes">
+          <span>Carnes</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-12">
+    <a class="link-category" (click)="goToRecipes('peixes')">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-body">
+          <img src="{{ _url }}assets/img/svg/fish.svg" class="category-icon" alt="peixes" title="peixes">
+          <span>Peixes</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="col-lg-3 col-md-6 col-sm-12">
+    <a class="link-category" (click)="goToRecipes('vegetais')">
+      <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-body">
+          <img src="{{ _url }}assets/img/svg/vegetables.svg" class="category-icon" alt="legumes" title="legumes">
+          <span>Vegetais</span>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
