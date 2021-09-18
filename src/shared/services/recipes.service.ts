@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map } from 'rxjs/operators';
 import { HostService } from '.';
-import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ReceitaModel } from '../models';
 
 @Injectable({
@@ -11,16 +11,23 @@ import { ReceitaModel } from '../models';
 export class RecipesService {
   _url: string = '';
   _receita!: ReceitaModel;
+  _listRecipes!: ReceitaModel[];
 
-  constructor(private http: HttpClient, private hostService: HostService) { }
+  constructor(private http: HttpClient, private hostService: HostService) {
+    this._url = this.hostService.getDomainUrl();
+  }
 
   getListRecipes(): Observable<ReceitaModel[]> {
-    this._url = this.hostService.getDomainUrl();
     return this.http.get<ReceitaModel[]>(`${ this._url }assets/data/receitas.json`);
   }
 
   setRecipe(receita: ReceitaModel) {
-    this._receita = receita;
+    if (!!receita) {
+      this._receita = receita;
+    } else {
+      return;
+    }
+
   }
 
   getRecipe(): ReceitaModel {

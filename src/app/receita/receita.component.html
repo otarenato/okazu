@@ -1,11 +1,21 @@
-<div class="row">
-  <h2>{{ _receita.titulo }}</h2>
-  <p>Ingredientes:</p>
-  <ul>
-    <li *ngFor="let ing of _receita.ingredientes">{{ ing }}</li>
-  </ul>
-  <p>Modo de preparo:</p>
-  <ul>
-    <li *ngFor="let prep of _receita.preparo">{{ prep }}</li>
-  </ul>
+<div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+  <div class="d-flex align-items-center text-dark text-decoration-none">
+    <img src="{{ _url }}assets/img/svg/{{ _icon }}.svg" style="width: 15%;" /><h2 class="ms-3">{{ _receita.titulo }}</h2>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-12">
+    <div class="card bg-secondary bg-opacity-10">
+      <div class="card-body">
+        <p>Ingredientes:</p>
+        <ul>
+          <li *ngFor="let ing of _receita.ingredientes">{{ ing }}</li>
+        </ul>
+        <p>Modo de preparo:</p>
+        <ul>
+          <li *ngFor="let prep of _receita.preparo">{{ prep }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

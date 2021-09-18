@@ -23,5 +23,24 @@
       "Após o preaquecimento, coloque a assadeira no forno e deixe por 40 minutos",
       "Retire o papel alumínio e deixe mais 20 minutos para dourar"
     ]
+  },
+  {
+    "id": 2,
+    "titulo": "Vinagrete",
+    "categoria": "vegetais",
+    "foto": "",
+    "ingredientes": [
+      "1 cebola",
+      "1 tomate",
+      "Cheiro verde",
+      "Sal e pimenta a gosto",
+      "50ml de vinagre",
+      "30 ml de azeite de oliva"
+    ],
+    "preparo": [
+      "Em uma tigela, coloque cebola, o tomate e o cheiro verde picados",
+      "Coloque o vinagre, o azeite, o sal e a pimenta do reino",
+      "Misture bem e deixe na geladeira por volta de 30 minutos"
+    ]
   }
 ]

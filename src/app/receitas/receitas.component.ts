@@ -20,13 +20,11 @@ export class ReceitasComponent implements OnInit {
 
   ngOnInit(): void {
     this._url = this.hostService.getDomainUrl();
-    this.setUpHeader();
-    this.recipeService.getListRecipes().subscribe((res: ReceitaModel[]) => {
-      this._list = res;
-    });
+    this.setUpPage();
+
   }
 
-  setUpHeader(): void {
+  setUpPage(): void {
     const category = this.hostService.getParameterResult('categoria');
     switch(category) {
       case 'aves':
@@ -54,12 +52,13 @@ export class ReceitasComponent implements OnInit {
         this._titleCategory = 'Vegetais';
         break;
     }
+    this.recipeService.getListRecipes().subscribe((res: ReceitaModel[]) => {
+      this._list = res.filter(r => r.categoria === category);
+    });
   }
 
   goToRecipe(id: number) {
-    this._receita = this._list.find(r => r.id === id) as ReceitaModel;
-    this.recipeService.setRecipe(this._receita);
-    this.route.navigate(['/receita']);
+    const _id = btoa(id.toString())
+    this.route.navigate(['/receita'], { queryParams: { id: _id } });
   }
-
 }
