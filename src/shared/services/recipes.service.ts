@@ -33,4 +33,29 @@ export class RecipesService {
   getRecipe(): ReceitaModel {
     return this._receita;
   }
+
+  getIcon(category: string): string {
+    let icon = '';
+    switch(category) {
+      case 'aves':
+        icon = 'chicken';
+        break;
+      case 'carnes':
+        icon = 'meat';
+        break;
+      case 'peixes':
+        icon = 'fish';
+        break;
+      case 'massas':
+        icon = 'pasta';
+        break;
+      case 'sopas':
+        icon = 'soup';
+        break;
+      default:
+        icon = 'vegetables';
+        break;
+    }
+    return icon;
+  }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReceitaModel } from 'src/shared/models';
-import { HostService, RecipesService } from 'src/shared/services';
+import { EncodeDecodeService, HostService, RecipesService } from 'src/shared/services';
 
 @Component({
   selector: 'app-receita',
@@ -13,37 +13,27 @@ export class ReceitaComponent implements OnInit {
   _url: string = '';
   _icon: string = '';
   _receita: ReceitaModel = new ReceitaModel;
+  _pathImage: string = '';
 
-  constructor(private recipeService: RecipesService, private route: Router, private hostService: HostService) {
+  constructor(
+    private recipeService: RecipesService,
+    private route: Router,
+    private hostService: HostService,
+    private encodeDecodeService: EncodeDecodeService) {
     this._url = this.hostService.getDomainUrl();
   }
 
   ngOnInit(): void {
-    let id = +atob(this.hostService.getParameterResult('id'));
-    this.recipeService.getListRecipes().subscribe((res: ReceitaModel[]) => {
-      let rec = res.filter(r => r.id === id);
-      this._receita = rec[0];
-      switch(this._receita.categoria) {
-        case 'aves':
-          this._icon = 'chicken';
-          break;
-        case 'carnes':
-          this._icon = 'meat';
-          break;
-        case 'peixes':
-          this._icon = 'fish';
-          break;
-        case 'massas':
-          this._icon = 'pasta';
-          break;
-        case 'sopas':
-          this._icon = 'soup';
-          break;
-        default:
-          this._icon = 'vegetables';
-          break;
-      }
-    });
-  }
+    const urlImage = 'assets/img/svg/';
+    if (this.hostService.getParameterResult('codRecipe')) {
+      let id = +this.encodeDecodeService.DecodeUnicode(this.hostService.getParameterResult('codRecipe'));
+      this.recipeService.getListRecipes().subscribe((res: ReceitaModel[]) => {
+        let rec = res.filter(r => r.id === id);
+        this._receita = rec[0];
+        this._icon = this.recipeService.getIcon(this._receita.categoria);
+        this._pathImage = this._url + urlImage + this._icon + '.svg';
+      });
+    }
 
+  }
 }

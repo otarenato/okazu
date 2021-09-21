@@ -1,14 +1,16 @@
 <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
   <div class="d-flex align-items-center text-dark text-decoration-none">
-    <img src="{{ _url }}assets/img/svg/{{ _icon }}.svg" style="width: 15%;" /><h2 class="ms-3">{{ _titleCategory }}</h2>
+    <img [src]="_pathImage" style="width: 15%;" /><h2 class="ms-3">{{ _titleCategory }}</h2>
   </div>
 </div>
 <div class="row">
-  <div class="col">
-    <ul>
-      <li *ngFor="let item of _list" (click)="goToRecipe(item.id)">
-        {{ item.titulo }}
-      </li>
-    </ul>
+  <div *ngFor="let item of _list" class="col-lg-6 col-md-6 col-sm-12">
+    <a href="javascript:void(0)" (click)="goToRecipe(item.id)" class="link-receitas">
+      <div class="card">
+        <div class="card-body">
+          {{ item.titulo }}
+        </div>
+      </div>
+    </a>
   </div>
 </div>
