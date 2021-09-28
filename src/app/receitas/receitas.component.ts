@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReceitaModel } from 'src/shared/models';
 import { HostService, RecipesService, EncodeDecodeService } from 'src/shared/services';
+import { URL } from 'src/assets/constants';
 
 @Component({
   selector: 'app-receitas',
@@ -29,7 +30,7 @@ export class ReceitasComponent implements OnInit {
   }
 
   setUpPage(): void {
-    const urlImage = 'assets/img/svg/';
+    const urlImage = URL.urlImage;
     const category = this.hostService.getParameterResult('categoria');
     this._icon = this.recipeService.getIcon(category);
     switch(category) {

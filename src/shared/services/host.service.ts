@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { URL } from 'src/assets/constants';
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +9,8 @@ export class HostService {
 
   constructor(private actRoute: ActivatedRoute) { }
 
-  urlPath: string = 'https://otarenato.github.io/okazu/';
-  localhostPath: string = '../../';
+  urlPath: string = URL.urlGitHubPath;
+  localhostPath: string = URL.urlLocalhostPath;
 
   getDomainUrl(): string {
     const host = window.location.hostname;

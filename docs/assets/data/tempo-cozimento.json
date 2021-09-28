@@ -1,0 +1,8 @@
+[
+  {
+    "item": "Batata",
+    "fervura": { "min": 25, "max": 35, "unidade-tempo": "minutos" },
+    "vapor": { "min": 30, "max": 45, "unidade-tempo": "minutos" },
+    "pressao": { "min": 10, "max": 15, "unidade-tempo": "minutos" }
+  }
+]

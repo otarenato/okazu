@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReceitaModel } from 'src/shared/models';
 import { EncodeDecodeService, HostService, RecipesService } from 'src/shared/services';
+import { URL } from 'src/assets/constants';
 
 @Component({
   selector: 'app-receita',
@@ -17,14 +18,14 @@ export class ReceitaComponent implements OnInit {
 
   constructor(
     private recipeService: RecipesService,
-    private route: Router,
     private hostService: HostService,
     private encodeDecodeService: EncodeDecodeService) {
     this._url = this.hostService.getDomainUrl();
+    
   }
 
   ngOnInit(): void {
-    const urlImage = 'assets/img/svg/';
+    const urlImage = URL.urlImage;
     if (this.hostService.getParameterResult('codRecipe')) {
       let id = +this.encodeDecodeService.DecodeUnicode(this.hostService.getParameterResult('codRecipe'));
       this.recipeService.getListRecipes().subscribe((res: ReceitaModel[]) => {
@@ -34,6 +35,5 @@ export class ReceitaComponent implements OnInit {
         this._pathImage = this._url + urlImage + this._icon + '.svg';
       });
     }
-
   }
 }

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { ReceitasModule } from './receitas/receitas.module';
 import { ReceitaModule } from './receita/receita.module';
+import { TempoCozimentoModule } from './tempo-cozimento/tempo-cozimento.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReceitaModule } from './receita/receita.module';
     AppRoutingModule,
     HomeModule,
     ReceitasModule,
-    ReceitaModule
+    ReceitaModule,
+    TempoCozimentoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
